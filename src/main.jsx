@@ -4,8 +4,4 @@ import "./styles/index.css";
 import "./styles/fonts.css";
 import App from "./App";
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
+createRoot(document.getElementById("root")).render(<App />);
