@@ -1,7 +1,7 @@
-import React from "react";
+import CategoryForm from "src/components/CategoryForm";
 
 const AdminPage = () => {
-  return <div>AdminPage</div>;
+  return <CategoryForm />;
 };
 
 export default AdminPage;

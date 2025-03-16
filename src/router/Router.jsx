@@ -47,10 +47,11 @@ const Router = () => {
             ) : (
               <Navigate
                 to='/
-            '
+              '
               />
             )
           }
+          //   element={<AdminPage />}
         />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
