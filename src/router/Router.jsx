@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
+import Loader from "src/components/modules/Loader";
 import PageNotFound from "src/pages/404";
 import AdminPage from "src/pages/AdminPage";
 import AuthPage from "src/pages/AuthPage";
@@ -14,16 +15,49 @@ const Router = () => {
   });
   console.log({ data, isPending, error });
 
-  //   if (isPending) return <h1>Loading...</h1>;
+  //   if (isPending) return <h1>sdasas</h1>;
+
   return (
-    <Routes>
-      <Route index element={<HomePage />} />
-      <Route path='/dashboard' element={<DashboardPage />} />
-      <Route path='/auth' element={<AuthPage />} />
-      <Route path='/admin' element={<AdminPage />} />
-      <Route path='*' element={<PageNotFound />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route index element={isPending ? <Loader /> : <HomePage />} />
+        <Route
+          path='/dashboard'
+          element={
+            isPending ? (
+              <Loader />
+            ) : data ? (
+              <DashboardPage />
+            ) : (
+              <Navigate to='/auth' />
+            )
+          }
+        />
+        <Route
+          path='/auth'
+          element={data ? <Navigate to='/dashboard' /> : <AuthPage />}
+        />
+        <Route
+          path='/admin'
+          element={
+            isPending ? (
+              <Loader />
+            ) : data && data.data.role === "ADMIN" ? (
+              <AdminPage />
+            ) : (
+              <Navigate
+                to='/
+            '
+              />
+            )
+          }
+        />
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
+    </>
   );
 };
 
 export default Router;
+
+// 09189990099 => AdminAccountNumber => for  using AdminAccount

@@ -17,8 +17,8 @@ const CheckOtpForm = ({ code, setCode, mobile, setStep }) => {
     const { response, error } = await checkOtp(code, mobile);
 
     if (response) {
-      navigate("/");
       setCookie(response.data);
+      navigate("/");
       refetch();
     }
 
