@@ -12,9 +12,9 @@ const Router = () => {
     queryKey: ["profile"],
     queryFn: getProfile,
   });
-  console.log({ data, isPending, error });
+    console.log({ data, isPending, error });
 
-  if (isPending) return <h1>Loading...</h1>;
+  //   if (isPending) return <h1>Loading...</h1>;
   return (
     <Routes>
       <Route index element={<HomePage />} />

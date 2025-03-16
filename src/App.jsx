@@ -5,11 +5,10 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import defaultOptions from "src/configs/reactQuery";
 
-const queryClient = new QueryClient({
-  defaultOptions,
-});
-
 function App() {
+  const queryClient = new QueryClient({
+    defaultOptions,
+  });
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>

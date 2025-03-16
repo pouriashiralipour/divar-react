@@ -1,6 +1,6 @@
 const defaultOptions = {
   queries: {
-    retry: false,
+    retry: 1,
     refetchOnWindowFocus: false,
     refetchOnMount: false,
     staleTime: 60 * 1000,
