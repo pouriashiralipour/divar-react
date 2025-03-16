@@ -13,7 +13,7 @@ const Router = () => {
     queryKey: ["profile"],
     queryFn: getProfile,
   });
-  console.log({ data, isPending, error });
+//   console.log({ data, isPending, error });
 
   //   if (isPending) return <h1>sdasas</h1>;
 

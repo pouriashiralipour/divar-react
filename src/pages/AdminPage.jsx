@@ -1,7 +1,13 @@
 import CategoryForm from "src/components/CategoryForm";
+import CategoryList from "src/components/CategoryList";
 
 const AdminPage = () => {
-  return <CategoryForm />;
+  return (
+    <div>
+      <CategoryList />
+      <CategoryForm />
+    </div>
+  );
 };
 
 export default AdminPage;

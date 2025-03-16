@@ -1,3 +1,6 @@
+.form {
+  align-items: center;
+}
 .form h3 {
   margin-bottom: 30px;
   border-bottom: 3px solid #a62626;
@@ -34,6 +37,11 @@
   background-color: #a62626;
   margin-bottom: 20px;
   color: #fff;
-  text-align: cenetr;
+  text-align: center;
   border-radius: 5px;
+  padding: 3px 5px;
+}
+
+.form button:disabled {
+  opacity: 0.5;
 }
